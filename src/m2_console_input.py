@@ -3,8 +3,8 @@ This module demonstrates lets you practice INPUT from the CONSOLE.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Trey Kline.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -31,10 +31,11 @@ def double_a_float():
          -6.28
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    floaty = float(input('Gimmie float: '))
+    print(floaty * 2)
 
 def print_an_integer_many_times():
     """
@@ -62,10 +63,12 @@ def print_an_integer_many_times():
          10
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    number = int(input('Gimmie ineger: '))
+    for k in range(number):
+        print(number*2)
 
 def print_an_integer_many_times_on_one_row():
     """
@@ -75,18 +78,24 @@ def print_an_integer_many_times_on_one_row():
     Here are two sample runs, where the user input is to the right
     of the colon:
          Enter an integer: 3
-         666
+         69
 
          Enter an integer: 5
          1010101010
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # HINT: One way to print on a SINGLE line is to build up a string
     #       and then print that (single) string.
     # -------------------------------------------------------------------------
+    number = int(input('Gimmie Integer: '))
+    numbler = str(number*2)
+    strng = ''
+    for k in range(number):
+        strng = strng + numbler
+    print(strng)
 
 
 def input_it_all():
@@ -121,10 +130,17 @@ def input_it_all():
          Peace & Love.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    floater = float(input('Gimmie positive float: '))
+    number = int(input('Gimmie positive int: '))
+    strink = str(input('Lemme get one string pls: '))
 
+    for k in range(number):
+        print(floater**0.5)
+    for k in range(number):
+        print(strink)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
