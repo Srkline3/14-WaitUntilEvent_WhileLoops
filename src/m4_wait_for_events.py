@@ -40,8 +40,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_sum_until_prime_input()
     #run_test_next_prime()
-    run_test_prime_gap()
-    #run_test_wait_for_sum_of_cubes()
+    #run_test_prime_gap()
+    run_test_wait_for_sum_of_cubes()
 
 
 def is_prime(n):
@@ -343,23 +343,22 @@ def prime_gap(m):
       :type m: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONEO: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:
     #    -- Use (call) the   *** next_prime ***   function
     #       (that you implemented) appropriately.
     # -------------------------------------------------------------------------
-    beeg_prime = 0
+
     prime = 2
-
+    ans = 0
     while True:
-        if (next_prime(beeg_prime)-prime) >= m:
+        if (next_prime(prime+1)-prime) >= m:
             break
-        ans = prime
         prime = next_prime(prime+1)
+    return prime
 
-    return ans
 def run_test_wait_for_sum_of_cubes():
     """ Tests the   wait_for_sum_of_cubes    function. """
     # -------------------------------------------------------------------------
@@ -437,19 +436,28 @@ def run_test_wait_for_sum_of_cubes():
     # Compute the expected answer BY HAND, as always.
 
     # Test 7:
+
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 2
+    actual = wait_for_sum_of_cubes(9)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
 
-    # TODO 6 (continued):
+
+    # DONE 6 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **  the
     #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
 
     # Test 8:
+
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 1
+    actual = wait_for_sum_of_cubes(-1231923)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
 
 
@@ -497,6 +505,18 @@ def wait_for_sum_of_cubes(x):
     # (or look up) a formula that would allow a faster computation.
     # But no fair using any such approach in this implementation.
     # -------------------------------------------------------------------------
+    n=1
+    while True:
+        cube = 0
+        for k in range(n):
+            cube = (cube +(k+1)**3)
+
+        if cube >= x:
+            return n
+            break
+
+        n = n + 1
+
 
 
 # -----------------------------------------------------------------------------
